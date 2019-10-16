@@ -38,7 +38,7 @@ class TimeZoneField(models.CharField):
             return None  # null=True
         return coerce_timezone_value(value)
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection):
         return self.to_python(value)
 
     def get_prep_value(self, value):
